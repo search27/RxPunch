@@ -1,5 +1,8 @@
 # RxPunch
 
+* Loading Effect Library
+* CSS + JAVASCRIPT
+
 Support By [ Cloud Rx (<a href='https://rxapis.com'>https://rxapis.com</a>) ].
 * Testing is available until 2025/12/31 23:59.
 
