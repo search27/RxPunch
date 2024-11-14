@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <script src="./imageData.js"></script>
+        <script src="./distFiles/RxFramework.js"></script>
+        <style>
+            html, body {
+                margin : 0;
+                padding : 0;
+            }
+            * { box-sizing: border-box; }
+            div {
+                border : 5px solid darkblue;
+                border-radius: 50%;
+                width: 300px;
+                height: 300px;
+
+                position: absolute;
+                top : 50%;
+                left : 50%;
+                transform: translate(-50%, -50%);
+
+                z-index: 99;
+            }
+            canvas {}
+            span.pt-c {
+                border-radius: 50%;
+                text-align: center;
+                color : white;
+            }
+            span.pt-c:nth-child(2){ background-color: #FCF596;}
+            span.pt-c:nth-child(3){ background-color: #FBD288;}
+            span.pt-c:nth-child(4){ background-color: #FF9C73;}
+            span.pt-c:nth-child(5){ background-color: #FF4545;}
+            span.pt-c:nth-child(6){ background-color: #F3F3E0;}
+            span.pt-c:nth-child(7){ background-color: #133E87;}
+            span.pt-c:nth-child(8){ background-color: #608BC1;}
+            span.pt-c:nth-child(9){ background-color: #CBDCEB;}
+            span.pt-c:nth-child(10){ background-color: #37AFE1;}
+            span.pt-c:nth-child(11){ background-color: #4CC9FE;}
+            span.pt-c:nth-child(12){ background-color: #F5F4B3;}
+            span.pt-c:nth-child(12){ background-color: #FFFECB;}
+
+            
+
+        </style>
+
+
+        <script>
+
+            let isStart = false;
+            const Punch = () => {
+                if(isStart) return;
+                isStart = true;
+                punch.Show();
+            }
+            const Clear = () => {
+                isStart = false;
+            }
+
+            let punch;
+            window.onload = function(){
+
+                const logo = new Image();
+                logo.src = './rx_apis_logo3.png';
+
+                const image = new Image();
+                image.src = BASE64;
+
+                image.addEventListener('load', function(){
+                    punch = new RxPunch({
+                        text : 'Loading...',
+                        fontSize : 53,
+                        punchCount : 10,
+                        // startImage : 'white',
+                        startImage : logo,
+                        position : 'center',
+                        scale : 1,
+                        image : this,
+                        ele : document.getElementById('circle'),
+                        duration : 10 * 1000,
+                    });
+                })
+
+
+            }
+
+        </script>
+    </head>
+    <body>
+        
+        <button onclick="Punch()">Punch</button>
+        <button onclick="Clear()">Clear</button>
+        <div id="circle"> </div>
+
+    </body>
+</html>
